@@ -38,11 +38,11 @@
         [Test]
         public void ExecuteTest()
         {
-            IWebElement elementParagrafoFirst = _driver.FindElement(By.CssSelector("p"));
-            IWebElement elementTitle = elementParagrafoFirst.FindElement(By.XPath("/descendant::h2/span"));
+            IWebElement elementParagraphsFirst = _driver.FindElement(By.CssSelector("p"));
+            IWebElement elementTitle = elementParagraphsFirst.FindElement(By.XPath("/descendant::h2/span"));
 
             StringAssert.AreEqualIgnoringCase("What is Lorem Ipsum?", elementTitle.GetAttribute("innerText"));
-            StringAssert.Contains("Lorem Ipsum is simply dummy text of the printing and typesetting industry", elementParagrafoFirst.Text);
+            StringAssert.Contains("Lorem Ipsum is simply dummy text of the printing and typesetting industry", elementParagraphsFirst.Text);
         }
 
         [TearDown]
