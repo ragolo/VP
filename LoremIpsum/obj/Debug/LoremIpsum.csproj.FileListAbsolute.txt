@@ -7,3 +7,5 @@ E:\Laboral\Labs\Selenium\VP\LoremIpsum\LoremIpsum\bin\Debug\WebDriver.xml
 E:\Laboral\Labs\Selenium\VP\LoremIpsum\LoremIpsum\obj\Debug\LoremIpsum.csprojResolveAssemblyReference.cache
 E:\Laboral\Labs\Selenium\VP\LoremIpsum\LoremIpsum\obj\Debug\LoremIpsum.exe
 E:\Laboral\Labs\Selenium\VP\LoremIpsum\LoremIpsum\obj\Debug\LoremIpsum.pdb
+E:\Laboral\Labs\Selenium\VP\LoremIpsum\LoremIpsum\bin\Debug\nunit.framework.dll
+E:\Laboral\Labs\Selenium\VP\LoremIpsum\LoremIpsum\bin\Debug\nunit.framework.xml
