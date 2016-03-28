@@ -41,7 +41,7 @@
             IWebElement elementParagrafoFirst = _driver.FindElement(By.CssSelector("p"));
             IWebElement elementTitle = elementParagrafoFirst.FindElement(By.XPath("/descendant::h2/span"));
 
-            Assert.Equals("What is Lorem Ipsum?", elementTitle.GetAttribute("innerText"));
+            StringAssert.AreEqualIgnoringCase("What is Lorem Ipsum?", elementTitle.GetAttribute("innerText"));
             StringAssert.Contains("Lorem Ipsum is simply dummy text of the printing and typesetting industry", elementParagrafoFirst.Text);
         }
 
