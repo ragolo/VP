@@ -10,3 +10,4 @@ E:\Laboral\Labs\Selenium\VP\LoremIpsum\LoremIpsum\bin\Debug\WebDriver.xml
 E:\Laboral\Labs\Selenium\VP\LoremIpsum\LoremIpsum\bin\Debug\WebDriver.Support.xml
 E:\Laboral\Labs\Selenium\VP\LoremIpsum\LoremIpsum\obj\Debug\LoremIpsum.exe
 E:\Laboral\Labs\Selenium\VP\LoremIpsum\LoremIpsum\obj\Debug\LoremIpsum.pdb
+E:\Laboral\Labs\Selenium\VP\LoremIpsum\LoremIpsum\obj\Debug\LoremIpsum.csprojResolveAssemblyReference.cache

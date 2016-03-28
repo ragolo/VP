@@ -1,4 +1,8 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=2FFC667BE1D54BAEA262FDB03016C738/@KeyIndexDefined">True</s:Boolean>
+	<s:Int64 x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=2FFC667BE1D54BAEA262FDB03016C738/GroupingIndex/@EntryValue">4</s:Int64>
+	<s:String x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=2FFC667BE1D54BAEA262FDB03016C738/Name/@EntryValue">ExexcuteTestCase2</s:String>
+	<s:String x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=2FFC667BE1D54BAEA262FDB03016C738/XmlSerializedElements/@EntryValue">&lt;Session&gt;&lt;e Id="LoremIpsum.Program.ExexcuteTestCase2" Project="EEE66C3C-5726-4BBA-9C3A-2D000DFE6BC5" Provider="nUnit" /&gt;&lt;e Id="LoremIpsum.Program" Project="EEE66C3C-5726-4BBA-9C3A-2D000DFE6BC5" Provider="nUnit" /&gt;&lt;/Session&gt;</s:String>
 	
 	
 	

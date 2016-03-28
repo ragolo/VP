@@ -1,4 +1,6 @@
-﻿namespace LoremIpsum
+﻿using System.Linq;
+
+namespace LoremIpsum
 {
     using NUnit.Framework;
     using OpenQA.Selenium.Chrome;
@@ -17,7 +19,7 @@
         /// <param name="args">The arguments.</param>
         public static void Main(string[] args)
         {
-
+            
         }
 
         [SetUp]
@@ -37,7 +39,7 @@
         }
 
         [Test]
-        public void ExecuteTest()
+        public void ExecuteTestCase1()
         {
             string firstparagraph = SeleniumGetMethods.GetText("p", PropertiesCollection.PropertyType.CssSelector);
             string title = SeleniumGetMethods.GetText("/descendant::h2/span", PropertiesCollection.PropertyType.XPath);
@@ -45,6 +47,29 @@
             StringAssert.AreEqualIgnoringCase("What is Lorem Ipsum?", title);
             StringAssert.Contains("Lorem Ipsum is simply dummy text of the printing and typesetting industry", firstparagraph);
         }
+
+        [Test]
+        public void ExexcuteTestCase2()
+        {
+            const string selectelement = "amount";
+            const int numberparams = 3;
+
+            SeleniumSetMethods.ClearElement(selectelement, PropertiesCollection.PropertyType.Id);
+            SeleniumSetMethods.EnterText(selectelement, numberparams.ToString(), PropertiesCollection.PropertyType.Id);
+
+            SeleniumSetMethods.Click("paras", PropertiesCollection.PropertyType.Id);
+            SeleniumSetMethods.Click("input[type='submit']#generate", PropertiesCollection.PropertyType.CssSelector);
+
+            var counterparas = SeleniumGetMethods.GetElementsByCount("p", PropertiesCollection.PropertyType.CssSelector);
+
+            Assert.AreEqual(numberparams, counterparas, "The numbers of paragraphs are not equals");
+
+            var resultgenerated = SeleniumGetMethods.GetText("generated", PropertiesCollection.PropertyType.Id);
+            var firstresultgenerated = resultgenerated.Split(',').FirstOrDefault();
+
+            StringAssert.Contains(numberparams.ToString(), firstresultgenerated);
+        }
+
 
         [TearDown]
         public void CleanUp()

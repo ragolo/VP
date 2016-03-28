@@ -3,44 +3,68 @@
     using OpenQA.Selenium;
     using OpenQA.Selenium.Support.UI;
 
+    /// <summary>
+    /// Class selenium set methods
+    /// </summary>
     public class SeleniumSetMethods
     {
 
         /// <summary>
         /// Enters the text.
         /// </summary>
-        /// <param name="driver">The driver.</param>
         /// <param name="element">The element.</param>
         /// <param name="value">The value.</param>
         /// <param name="elementType">Type of the element.</param>
-        public static void EnterText(IWebDriver driver, string element, string value, string elementType)
-        {
-            if (elementType.Equals("Id"))
-            {
-                driver.FindElement(By.Id(element)).SendKeys(value);
-            }
-
-            if (elementType.Equals("Name"))
-            {
-                driver.FindElement(By.Name(element)).SendKeys(value);
-            }
-        }
-
-        /// <summary>
-        /// Clicks the specified driver.
-        /// </summary>
-        /// <param name="driver">The driver.</param>
-        /// <param name="element">The element.</param>
-        /// <param name="elementType">Type of the element.</param>
-        public static void Click(IWebDriver driver, string element, PropertiesCollection.PropertyType elementType)
+        public static void EnterText(string element, string value, PropertiesCollection.PropertyType elementType)
         {
             switch (elementType)
             {
                 case PropertiesCollection.PropertyType.Id:
-                    driver.FindElement(By.Id(element)).Click();
+                    PropertiesCollection.Driver.FindElement(By.Id(element)).SendKeys(value);
                     break;
                 case PropertiesCollection.PropertyType.Name:
-                    driver.FindElement(By.Name(element)).Click();
+                    PropertiesCollection.Driver.FindElement(By.Name(element)).SendKeys(value);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Clicks the specified element.
+        /// </summary>
+        /// <param name="element">The element.</param>
+        /// <param name="elementType">Type of the element.</param>
+        public static void Click(string element, PropertiesCollection.PropertyType elementType)
+        {
+            switch (elementType)
+            {
+                case PropertiesCollection.PropertyType.Id:
+                    PropertiesCollection.Driver.FindElement(By.Id(element)).Click();
+                    break;
+                case PropertiesCollection.PropertyType.Name:
+                    PropertiesCollection.Driver.FindElement(By.Name(element)).Click();
+                    break;
+                case PropertiesCollection.PropertyType.CssSelector:
+                    PropertiesCollection.Driver.FindElement(By.CssSelector(element)).Click();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        public static void ClearElement(string element, PropertiesCollection.PropertyType elementType)
+        {
+            switch (elementType)
+            {
+                case PropertiesCollection.PropertyType.Id:
+                    PropertiesCollection.Driver.FindElement(By.Id(element)).Clear();
+                    break;
+                case PropertiesCollection.PropertyType.Name:
+                    PropertiesCollection.Driver.FindElement(By.Name(element)).Clear();
+                    break;
+                case PropertiesCollection.PropertyType.CssSelector:
+                    PropertiesCollection.Driver.FindElement(By.CssSelector(element)).Clear();
                     break;
                 default:
                     break;
@@ -50,19 +74,18 @@
         /// <summary>
         /// Selects the drop down.
         /// </summary>
-        /// <param name="driver">The driver.</param>
         /// <param name="element">The element.</param>
         /// <param name="value">The value.</param>
         /// <param name="elementType">Type of the element.</param>
-        public static void SelectDropDown(IWebDriver driver, string element, string value, PropertiesCollection.PropertyType elementType)
+        public static void SelectDropDown(string element, string value, PropertiesCollection.PropertyType elementType)
         {
             switch (elementType)
             {
                 case PropertiesCollection.PropertyType.Id:
-                    new SelectElement(driver.FindElement(By.Id(element))).SelectByText(value);
+                    new SelectElement(PropertiesCollection.Driver.FindElement(By.Id(element))).SelectByText(value);
                     break;
                 case PropertiesCollection.PropertyType.Name:
-                    new SelectElement(driver.FindElement(By.Name(element))).SelectByText(value);
+                    new SelectElement(PropertiesCollection.Driver.FindElement(By.Name(element))).SelectByText(value);
                     break;
             }
         }

@@ -19,7 +19,6 @@
         /// <returns></returns>
         public static string GetText(string element, PropertiesCollection.PropertyType elementType)
         {
-
             switch (elementType)
             {
                 case PropertiesCollection.PropertyType.Id:
@@ -32,6 +31,29 @@
                     return PropertiesCollection.Driver.FindElement(By.CssSelector(element)).Text;
                 default:
                     return string.Empty;
+            }
+        }
+
+        /// <summary>
+        /// Gets the elements by count.
+        /// </summary>
+        /// <param name="element">The element.</param>
+        /// <param name="elementType">Type of the element.</param>
+        /// <returns></returns>
+        public static int GetElementsByCount(string element, PropertiesCollection.PropertyType elementType)
+        {
+            switch (elementType)
+            {
+                case PropertiesCollection.PropertyType.Id:
+                    return PropertiesCollection.Driver.FindElements(By.Id(element)).Count;
+                case PropertiesCollection.PropertyType.Name:
+                    return PropertiesCollection.Driver.FindElements(By.Name(element)).Count;
+                case PropertiesCollection.PropertyType.XPath:
+                    return PropertiesCollection.Driver.FindElements(By.XPath(element)).Count;
+                case PropertiesCollection.PropertyType.CssSelector:
+                    return PropertiesCollection.Driver.FindElements(By.CssSelector(element)).Count;
+                default:
+                    return 0;
             }
         }
 
